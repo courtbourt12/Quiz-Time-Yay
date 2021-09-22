@@ -14,7 +14,8 @@ var right = document.querySelector("#yup");
 var wrong = document.querySelector("#nope");
 console.log(questions);
 
-var count=0;
+var count= document.querySelector(".countdown");
+var time = 90;
 
 one.style.display = "none";
 two.style.display = "none";
@@ -28,6 +29,12 @@ wrong.style.display = "none";
 
 var Question = function () {
     opening.style.display = "none";
+    
+    
+setInterval(function() {
+        time--;
+        count.textContent = time + " seconds left";
+    }, 1000);
 
     var next = Math.floor(Math.random(questions)*questions.length);
     if (next===questions[0]) {
@@ -108,7 +115,7 @@ var nextQuestionWrong = function () {
     console.log(questions);
     console.log(nextUp); 
     wrong.style.display="block";
-    count--;
+    time-5;
     console.log(count);
 }
 
@@ -167,7 +174,6 @@ var nextQuestionRight = function () {
     console.log(questions);
     console.log(nextUp); 
     right.style.display="block";
-    count++;
     console.log(count);
 }
 
@@ -178,3 +184,4 @@ buttonwrong.forEach(function () {
 buttonright.forEach(function () {
     addEventListener("click", nextQuestionRight);
 });
+

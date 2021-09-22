@@ -1,0 +1,28 @@
+header {
+    text-align: center;
+}
+
+.cuteTitle {
+    font-size: 40px;
+    color: blueviolet;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.start {
+    font-size: 25px;
+    color: white;
+    background-color: blueviolet;
+    padding: 10px 30px 10px 30px;
+    border-radius: 100px;
+}
+
+.instructions {
+    font-size: 20px;
+    padding-bottom: 50px;
+}
+
+.countdown {
+    text-align: right;
+    font-size: 20px;
+}
