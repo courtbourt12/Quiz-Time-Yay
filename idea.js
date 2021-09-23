@@ -47,7 +47,7 @@ setInterval(function() {
     } else if (nextUp===questions[4]) {
         five.style.display="block";
     } else if (nextUp===questions[5]) {
-        six.style.display = "block;"
+        six.style.display = "block";
     }
     console.log(nextUp);
     questions.splice(nextUp,1, "used");
@@ -57,72 +57,16 @@ setInterval(function() {
 
 
 var nextQuestionWrong = function () {
-
-    // for (var i=0; i<questions.length; i++) {
-    //     var nextUp = Math.floor(Math.random(questions[i])*questions.length);
-    // }
+    if (questions[0,1,2,3,4,5,6]==="used")
+    {one.style.display = "none";
+    two.style.display = "none";
+    three.style.display = "none";
+    four.style.display = "none";
+    five.style.display="none";
+    six.style.display = "none";
+    closing.style.display = "block"
+} else{    
     var nextUp = Math.floor(Math.random()*questions.length);
-    if (nextUp===questions[1]) {
-        one.style.display="block";
-        two.style.display = "none";
-        three.style.display = "none";
-        four.style.display = "none";
-        five.style.display = "none";
-        six.style.display = "none";
-    } else if (nextUp===questions[2]) {
-        one.style.display = "none";
-        two.style.display="block";
-        three.style.display = "none";
-        four.style.display = "none";
-        five.style.display = "none";
-        six.style.display = "none";
-    } else if (nextUp===questions[3]) {
-        one.style.display = "none";
-        two.style.display = "none";
-        three.style.display="block";
-        four.style.display = "none";
-        five.style.display = "none";
-        six.style.display = "none";
-    } else if (nextUp===questions[4]) {
-        one.style.display = "none";
-        two.style.display = "none";
-        three.style.display = "none";
-        four.style.display="block";
-        five.style.display = "none";
-        six.style.display = "none";
-    } else if (nextUp===questions[5]) {
-        one.style.display = "none";
-        two.style.display = "none";
-        three.style.display = "none";
-        four.style.display = "none";
-        five.style.display="block";
-        six.style.display = "none";
-    } else if (nextUp===questions[6]) {
-        one.style.display = "none";
-        two.style.display = "none";
-        three.style.display = "none";
-        four.style.display = "none";
-        five.style.display = "none";
-        six.style.display = "block;"
-    } else{
-        for (var i=0; i<questions.length; i++) {
-            var nextUp = Math.floor(Math.random(questions[i])*questions.length);
-        }
-    }
-    console.log(nextUp);
-    questions.splice(nextUp, 1, "used");
-    console.log(questions);
-    console.log(nextUp); 
-    wrong.style.display="block";
-    time-5;
-    console.log(count);
-}
-
-var nextQuestionRight = function () {
-    
-    while(questions[nextUp]==="used") {
-        var nextUp = Math.floor(Math.random()*questions.length);
-
     if (nextUp===questions[0]) {
         one.style.display="block";
         two.style.display = "none";
@@ -164,19 +108,178 @@ var nextQuestionRight = function () {
         three.style.display = "none";
         four.style.display = "none";
         five.style.display = "none";
-        six.style.display = "block;"
+        six.style.display = "block";
+    } else{
+    while(questions[nextUp]==="used") {
+    var nextUp = Math.floor(Math.random()*questions.length);
+    if (nextUp===questions[0]) {
+        one.style.display="block";
+        two.style.display = "none";
+        three.style.display = "none";
+        four.style.display = "none";
+        five.style.display = "none";
+        six.style.display = "none";
+    } else if (nextUp===questions[1]) {
+        one.style.display = "none";
+        two.style.display="block";
+        three.style.display = "none";
+        four.style.display = "none";
+        five.style.display = "none";
+        six.style.display = "none";
+    } else if (nextUp===questions[2]) {
+        one.style.display = "none";
+        two.style.display = "none";
+        three.style.display="block";
+        four.style.display = "none";
+        five.style.display = "none";
+        six.style.display = "none";
+    } else if (nextUp===questions[3]) {
+        one.style.display = "none";
+        two.style.display = "none";
+        three.style.display = "none";
+        four.style.display="block";
+        five.style.display = "none";
+        six.style.display = "none";
+    } else if (nextUp===questions[4]) {
+        one.style.display = "none";
+        two.style.display = "none";
+        three.style.display = "none";
+        four.style.display = "none";
+        five.style.display="block";
+        six.style.display = "none";
+    } else if (nextUp===questions[5]) {
+        one.style.display = "none";
+        two.style.display = "none";
+        three.style.display = "none";
+        four.style.display = "none";
+        five.style.display = "none";
+        six.style.display = "block";
+    }else if (questions[0,1,2,3,4,5]==="used"){
+        questions.splice(nextUp, 1, "done");
+    } }
+    }}
+    console.log(nextUp);
+    questions.splice(nextUp, 1, "used");
+    console.log(questions);
+    console.log(nextUp); 
+    wrong.style.display="block";
+    right.style.display="none";
+    time-5;
+    console.log(count);
+}
+
+var nextQuestionRight = function () {
+    if (questions[0,1,2,3,4,5,6]==="used")
+    {one.style.display = "none";
+    two.style.display = "none";
+    three.style.display = "none";
+    four.style.display = "none";
+    five.style.display="none";
+    six.style.display = "none";
+    closing.style.display = "block"
+} else{    
+    var nextUp = Math.floor(Math.random()*questions.length);
+    if (nextUp===questions[0]) {
+        one.style.display="block";
+        two.style.display = "none";
+        three.style.display = "none";
+        four.style.display = "none";
+        five.style.display = "none";
+        six.style.display = "none";
+    } else if (nextUp===questions[1]) {
+        one.style.display = "none";
+        two.style.display="block";
+        three.style.display = "none";
+        four.style.display = "none";
+        five.style.display = "none";
+        six.style.display = "none";
+    } else if (nextUp===questions[2]) {
+        one.style.display = "none";
+        two.style.display = "none";
+        three.style.display="block";
+        four.style.display = "none";
+        five.style.display = "none";
+        six.style.display = "none";
+    } else if (nextUp===questions[3]) {
+        one.style.display = "none";
+        two.style.display = "none";
+        three.style.display = "none";
+        four.style.display="block";
+        five.style.display = "none";
+        six.style.display = "none";
+    } else if (nextUp===questions[4]) {
+        one.style.display = "none";
+        two.style.display = "none";
+        three.style.display = "none";
+        four.style.display = "none";
+        five.style.display="block";
+        six.style.display = "none";
+    } else if (nextUp===questions[5]) {
+        one.style.display = "none";
+        two.style.display = "none";
+        three.style.display = "none";
+        four.style.display = "none";
+        five.style.display = "none";
+        six.style.display = "block";
+    } else{
+    while(questions[nextUp]==="used") {
+    var nextUp = Math.floor(Math.random()*questions.length);
+    if (nextUp===questions[0]) {
+        one.style.display="block";
+        two.style.display = "none";
+        three.style.display = "none";
+        four.style.display = "none";
+        five.style.display = "none";
+        six.style.display = "none";
+    } else if (nextUp===questions[1]) {
+        one.style.display = "none";
+        two.style.display="block";
+        three.style.display = "none";
+        four.style.display = "none";
+        five.style.display = "none";
+        six.style.display = "none";
+    } else if (nextUp===questions[2]) {
+        one.style.display = "none";
+        two.style.display = "none";
+        three.style.display="block";
+        four.style.display = "none";
+        five.style.display = "none";
+        six.style.display = "none";
+    } else if (nextUp===questions[3]) {
+        one.style.display = "none";
+        two.style.display = "none";
+        three.style.display = "none";
+        four.style.display="block";
+        five.style.display = "none";
+        six.style.display = "none";
+    } else if (nextUp===questions[4]) {
+        one.style.display = "none";
+        two.style.display = "none";
+        three.style.display = "none";
+        four.style.display = "none";
+        five.style.display="block";
+        six.style.display = "none";
+    } else if (nextUp===questions[5]) {
+        one.style.display = "none";
+        two.style.display = "none";
+        three.style.display = "none";
+        four.style.display = "none";
+        five.style.display = "none";
+        six.style.display = "block";
+    } else if (questions[0,1,2,3,4,5]==="used"){
+        questions.splice(nextUp, 1, "done");
+    }}}
     }
     console.log(nextUp);
-    //  else{
-    //         var nextUp = Math.floor(Math.random()*questions.length);
-    //     }
-    }
     questions.splice(nextUp, 1, "used");
     console.log(questions);
     console.log(nextUp); 
     right.style.display="block";
+    wrong.style.display="none";
     console.log(count);
+   
 }
+
 
 begin.addEventListener("click", Question);
 
