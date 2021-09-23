@@ -14,7 +14,7 @@
         <p class="instructions">The following quiz includes six code-related questions to test your coding expertise against the masses. <br>
             You will have 90 seconds to complete the quiz.  Every wrong answer will result in a 5 second penalty. <br>
             Click the button below to begin and try your best to get the high score.  May the best coder win.</p>
-        <button id = "start">Begin Now</button>
+        <button class = "start">Begin Now</button>
     </header>
 
     <main>
@@ -41,6 +41,7 @@
                     <ol><button class ="wrong2">lnk = ""</button></ol>
                     <ol><button class ="wrong2">reference = ""</button></ol>
                 </ul>
+                <p id="RightorWrong"></p>
             </div>
         </div>
 
@@ -53,6 +54,7 @@
                     <ol><button class="correct3">CSS</button></ol>
                     <ol><button class="wrong3">Python</button></ol>
                 </ul>
+                <p id="RightorWrong"></p>
             </div>
         </div>
 
@@ -65,6 +67,7 @@
                     <ol><button class="wrong4">Symbol</button></ol>
                     <ol><button class="correct4">Boolean</button></ol>
                 </ul>
+                <p id="RightorWrong"></p>
             </div>
         </div>
 
@@ -77,6 +80,7 @@
                     <ol><button class="correct5">Sets an HTML element as a variable in JavaScript.</button></ol>
                     <ol><button class="wrong5">Selects a topic for the webpage.</button></ol>
                 </ul>
+                <p id="RightorWrong"></p>
             </div>
         </div>
 
@@ -94,8 +98,9 @@
         </div>
 
         <section class="Results">
+            <div>Question 6 was <span id="finalQuestion"></span></div>
             <div>You completed the quiz!</div>
-            <div>High Score : <span>number</span></div>
+            <div>Final Score : <span id= "score"></span></div>
         </section>
     </main>
     <script src="thisshouldwork.js"></script>
