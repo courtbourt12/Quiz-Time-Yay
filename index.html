@@ -14,20 +14,20 @@
         <p class="instructions">The following quiz includes six code-related questions to test your coding expertise against the masses. <br>
             You will have 90 seconds to complete the quiz.  Every wrong answer will result in a 5 second penalty. <br>
             Click the button below to begin and try your best to get the high score.  May the best coder win.</p>
-        <button class = "start">Begin Now</button>
+        <button id = "start">Begin Now</button>
     </header>
 
     <main>
-        <h1 class="countdown"></h1>
+        <h1 id="countdown"></h1>
         <section>
         <div id= "one">
             <div class= "questions">What is the purpose of commenting in code?</div>
             <div class= "answers">
                 <ul>
-                    <ol><button class= "wrong">To make fun of the code.</button></ol>
-                    <ol><button class="correct">To make it easier for others to follow the code.</button></ol>
-                    <ol><button class= "wrong">To put a comment section on the webpage.</button></ol>
-                    <ol><button class= "wrong">To share secrets.</button></ol>
+                    <ol><button class= "wrong1">To make fun of the code.</button></ol>
+                    <ol><button class="correct1">To make it easier for others to follow the code.</button></ol>
+                    <ol><button class= "wrong1">To put a comment section on the webpage.</button></ol>
+                    <ol><button class= "wrong1">To share secrets.</button></ol>
                 </ul> 
             </div>
         </div>
@@ -36,10 +36,10 @@
             <div class= "questions">What syntax is used to include the link to an image or webpage?</div>
             <div class= "answers">
                 <ul>
-                    <ol><button class="correct">href = ""</button></ol>
-                    <ol><button class ="wrong">source = ""</button></ol>
-                    <ol><button class ="wrong">lnk = ""</button></ol>
-                    <ol><button class ="wrong">reference = ""</button></ol>
+                    <ol><button class="correct2">href = ""</button></ol>
+                    <ol><button class ="wrong2">source = ""</button></ol>
+                    <ol><button class ="wrong2">lnk = ""</button></ol>
+                    <ol><button class ="wrong2">reference = ""</button></ol>
                 </ul>
             </div>
         </div>
@@ -47,11 +47,11 @@
         <div id= "three">
             <div class= "questions">Which of the following coding languages formats the style.</div>
             <div class= "answers">
-                <ul class = "nnn">
-                    <ol><button class="wrong">HTML</button></ol>
-                    <ol><button class="wrong">JavaScript</button></ol>
-                    <ol><button class="correct">CSS</button></ol>
-                    <ol><button class="wrong">Python</button></ol>
+                <ul>
+                    <ol><button class="wrong3">HTML</button></ol>
+                    <ol><button class="wrong3">JavaScript</button></ol>
+                    <ol><button class="correct3">CSS</button></ol>
+                    <ol><button class="wrong3">Python</button></ol>
                 </ul>
             </div>
         </div>
@@ -59,11 +59,11 @@
         <div id= "four">
             <div class= "questions">What is the term for a true or false comparison in JavaScript?</div>
             <div class= "answers">
-                <ul class= "nnnn">
-                    <ol><button class="wrong">String</button></ol>
-                    <ol><button class="wrong">Number</button></ol>
-                    <ol><button class="wrong">Symbol</button></ol>
-                    <ol><button class="correct">Boolean</button></ol>
+                <ul>
+                    <ol><button class="wrong4">String</button></ol>
+                    <ol><button class="wrong4">Number</button></ol>
+                    <ol><button class="wrong4">Symbol</button></ol>
+                    <ol><button class="correct4">Boolean</button></ol>
                 </ul>
             </div>
         </div>
@@ -71,11 +71,11 @@
         <div id= "five">
             <div class= "questions">What does document.QuerySelector(") do?</div>
             <div class= "answers">
-                <ul class= "nnnnn">
-                    <ol><button class="wrong">Selects a third party API.</button></ol>
-                    <ol><button class="wrong">Adds the enclosed text to the queue.</button></ol>
-                    <ol><button class="correct">Sets an HTML element as a variable in JavaScript.</button></ol>
-                    <ol><button class="wrong">Selects a topic for the webpage.</button></ol>
+                <ul>
+                    <ol><button class="wrong5">Selects a third party API.</button></ol>
+                    <ol><button class="wrong5">Adds the enclosed text to the queue.</button></ol>
+                    <ol><button class="correct5">Sets an HTML element as a variable in JavaScript.</button></ol>
+                    <ol><button class="wrong5">Selects a topic for the webpage.</button></ol>
                 </ul>
             </div>
         </div>
@@ -83,24 +83,20 @@
         <div id= "six">
             <div class= "questions">How do you refer to the HTML class="Fun" in CSS?</div>
             <div class= "answers">
-                <ul class = "nnnnnn">
-                    <ol><button class="wrong">#Fun</button></ol>
-                    <ol><button class="wrong">--Fun</button></ol>
-                    <ol><button class="correct">.Fun</button></ol>
-                    <ol><button class="wrong">/*Fun</button></ol>
+                <ul>
+                    <ol><button class="wrong6">#Fun</button></ol>
+                    <ol><button class="wrong6">--Fun</button></ol>
+                    <ol><button class="correct6">.Fun</button></ol>
+                    <ol><button class="wrong6">/*Fun</button></ol>
                 </ul>
+                <p id="RightorWrong"></p>
             </div>
         </div>
-        <p id="RightorWrong"></p>
-        </section>
-        <section class= "grade">
-            <div id="yup">Correct!</div>
-            <div id="nope">Incorrect!</div>
-        </section>
+
         <section class="Results">
             <div>You completed the quiz!</div>
             <div>High Score : <span>number</span></div>
         </section>
     </main>
-    <script src="idea.js"></script>
+    <script src="thisshouldwork.js"></script>
 </body>
