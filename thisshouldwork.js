@@ -36,3 +36,37 @@ var lastPage = document.querySelector("Results");
 
 var amIRight = document.getElementById("RightorWrong");
 var timer = document.getElementById("countdown");
+
+// Adding event listeners to the "wrong answer" buttons.
+
+buttons.forEach(wrongA1 => {
+    wrongA1.addEventListener("click",);
+})
+buttons.forEach(wrongA2 => {
+    wrongA2.addEventListener("click",);
+})
+buttons.forEach(wrongA3 => {
+    wrongA3.addEventListener("click",);
+})
+buttons.forEach(wrongA4 => {
+    wrongA4.addEventListener("click",);
+})
+buttons.forEach(wrongA5 => {
+    wrongA5.addEventListener("click",);
+})
+buttons.forEach(wrongA6 => {
+    wrongA6.addEventListener("click",);
+})
+
+// Adding event listeners to the "right answer" buttons.
+
+correctA1.addEventListener("click",);
+correctA2.addEventListener("click",);
+correctA3.addEventListener("click",);
+correctA4.addEventListener("click",);
+correctA5.addEventListener("click",);
+correctA6.addEventListener("click",);
+
+// Adding an event listener to the start button.
+
+startButton.addEventListener("click",);
