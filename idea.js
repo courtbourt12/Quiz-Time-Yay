@@ -57,6 +57,7 @@ setInterval(function() {
 
 
 var nextQuestionWrong = function () {
+    time-=5;
     if (questions[0,1,2,3,4,5,6]==="used")
     {one.style.display = "none";
     two.style.display = "none";
