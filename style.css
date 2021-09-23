@@ -90,6 +90,9 @@ ul button {
     position: absolute;
     left: 46.7%;
     margin-top: 10px;
+    padding: 5px;
+    border: 3px solid blueviolet;
+    background-color: white;
 }
 
 #theseScores {
@@ -114,4 +117,14 @@ ul button {
     margin-top: 50px;
 }
 
+.redo {
+    padding: 5px;
+    border: 3px solid blueviolet;
+    background-color: white;
+}
 
+.clear {
+    padding: 5px;
+    border: 3px solid blueviolet;
+    background-color: white;
+}

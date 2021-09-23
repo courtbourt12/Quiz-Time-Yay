@@ -51,6 +51,12 @@ The last page is within its own section tags.  The displayed phrases of text are
 ## CSS
 ---
 
+The CSS is very simple now that I have done it a few times.  The whole main tag was set to center align which centered each question grouping and the first page.  The last page needed a bit more alignment help due to the high scores being put on the right side and the buttons needing to be properly placed.  
+
+The color scheme is purple and white like the example provided.  The following is a picture of the styling.
+
+<img src="CSS.jpg" alt="Picture of the color scheme and centering of a question.">
+
 ## JavaScript
 ---
 <br>
