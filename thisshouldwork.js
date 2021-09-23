@@ -30,6 +30,10 @@ const wrongA6 = document.querySelectorAll(".wrong6");
 var firstPage = document.querySelector("header");
 var startButton = document.querySelector(".start");
 var lastPage = document.querySelector(".Results");
+var enterInitials = document.getElementById("initials");
+// var initialValue = initials.value;
+var submitScore = document.querySelector(".submit");
+
 
 // Variables for HTML placeholders.
 
@@ -42,6 +46,9 @@ var lastQuestionResult = document.getElementById("finalQuestion");
 var clock = document.getElementById("countdown");
 var time = 90;
 var remainingTime = document.getElementById("score");
+var score1 = document.querySelector("#topScore");
+var lastScore = localStorage.getItem("Score");
+console.log(lastScore);
 
 // Hide all HTML but the header.
 
@@ -60,10 +67,6 @@ function runTheClock() {setInterval(function() {
     clock.textContent = time + " seconds left";
 }, 1000);
 };
-
-// Adding a variable for functions to display if answer is right or wrong.
-
-
 
 // Function for clicking start button.
 
@@ -157,6 +160,23 @@ var question6Right = function () {
     clock.style.display = "none";
     var finalScore = time;
     remainingTime.textContent = finalScore;
+   
+    // Adding the data to local storage.
+
+    var lastScore = localStorage.getItem("finalScore");
+
+    if (lastScore<finalScore) {
+        score1.textContent="1. " + finalScore + "- You beat it this time!";
+    } else {
+        score1.textContent="1. " + lastScore + "- You didn't beat it this time :(";
+    };
+    
+    localStorage.setItem("Score", finalScore);
+    
+    var logData = function () {
+        localStorage.setItem("Initials", JSON.stringify(enterInitials));
+    }
+    submitScore.addEventListener("click", logData);
 };
 
 var question6Wrong = function () {
@@ -166,8 +186,27 @@ var question6Wrong = function () {
     time-=10;
     clock.style.display = "none";
     var finalScore = time;
-    remainingTime.textContent = finalScore;
+    remainingTime.textContent =finalScore;
+    
+    // Adding the data to local storage.
+
+    if (lastScore<finalScore) {
+        score1.textContent="1. " + finalScore + "- You beat it this time!";
+    } else {
+        score1.textContent="1. " + lastScore + "- You didn't beat it this time :(";
+    };
+    
+    localStorage.setItem("Score", finalScore);
+    
+    var logData = function () {
+        localStorage.setItem("Initials", JSON.stringify(enterInitials));
+    }
+    submitScore.addEventListener("click", logData);
 };
+
+// Function for entering in initials and adding the score with initials to the internal storage and leader board.
+
+
 
 // Adding event listeners to the "wrong answer" buttons.
 
@@ -202,3 +241,4 @@ correctA6.addEventListener("click", question6Right);
 // Adding an event listener to the start button.
 
 startButton.addEventListener("click", beginTheQuiz);
+
