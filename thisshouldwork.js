@@ -30,9 +30,10 @@ const wrongA6 = document.querySelectorAll(".wrong6");
 var firstPage = document.querySelector("header");
 var startButton = document.querySelector(".start");
 var lastPage = document.querySelector(".Results");
-var enterInitials = document.getElementById("initials");
-// var initialValue = initials.value;
+var enterInitials = document.querySelector("#initials");
 var submitScore = document.querySelector(".submit");
+var retake = document.querySelector("redo");
+var clearScores = document.querySelector("clear");
 
 
 // Variables for HTML placeholders.
@@ -164,18 +165,18 @@ var question6Right = function () {
     // Adding the data to local storage.
 
     var lastScore = localStorage.getItem("finalScore");
-
-    if (lastScore<finalScore) {
-        score1.textContent="1. " + finalScore + "- You beat it this time!";
-    } else {
-        score1.textContent="1. " + lastScore + "- You didn't beat it this time :(";
-    };
-    
-    localStorage.setItem("Score", finalScore);
+    var lastInitial = JSON.parse(localStorage.getItem("enterInitials"));
     
     var logData = function () {
+        if (lastScore<finalScore) {
+            score1.textContent="1. " + enterInitials + " - " + finalScore + "- You beat it this time!";
+        } else {
+            score1.textContent="1. " + lastInitial + " - " + lastScore + "- You didn't beat it this time :(";
+        };
+        
         localStorage.setItem("Initials", JSON.stringify(enterInitials));
     }
+    localStorage.setItem("Score", finalScore);
     submitScore.addEventListener("click", logData);
 };
 
@@ -190,17 +191,18 @@ var question6Wrong = function () {
     
     // Adding the data to local storage.
 
-    if (lastScore<finalScore) {
-        score1.textContent="1. " + finalScore + "- You beat it this time!";
-    } else {
-        score1.textContent="1. " + lastScore + "- You didn't beat it this time :(";
-    };
-    
-    localStorage.setItem("Score", finalScore);
+    var lastScore = localStorage.getItem("finalScore");
+    var lastInitial = JSON.parse(localStorage.getItem("enterInitials"));
     
     var logData = function () {
+        if (lastScore<finalScore) {
+            score1.textContent="1. " + enterInitials + " - " + finalScore + "- You beat it this time!";
+        } else {
+            score1.textContent="1. " + lastInitial + " - " + lastScore + "- You didn't beat it this time :(";
+        };
         localStorage.setItem("Initials", JSON.stringify(enterInitials));
     }
+    localStorage.setItem("Score", finalScore);
     submitScore.addEventListener("click", logData);
 };
 
