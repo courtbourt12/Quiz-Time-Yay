@@ -26,3 +26,92 @@ header {
     text-align: right;
     font-size: 20px;
 }
+
+main {
+    text-align: center;
+}
+#countdown {
+    text-align: right;
+    font-size: 20px;
+}
+
+.questions { 
+    font-size: 18px;
+    padding: 5px;
+    border: 2px solid blueviolet;
+}
+.answers {
+    font-size: 12px;
+}
+ul button {
+    padding: 10px;
+    background-color: blueviolet;
+    color: white;
+    border: 2px solid lightcyan;
+    margin-top: 20px;
+    margin-right: 45px;
+}
+
+#WrongorRight1, #WrongorRight2, #WrongorRight3, #WrongorRight4, #WrongorRight5 {
+    font-size: 20px;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid black;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: inline-block;
+}
+
+#lastanswer {
+    font-size: 15px;
+    color: gray;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid gray;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: inline-block;
+    
+}
+
+#congratulations {
+    font-size: 45px;
+    color: blueviolet;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+#datScore {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.submit {
+    display:block;
+    position: absolute;
+    left: 46.7%;
+    margin-top: 10px;
+}
+
+#theseScores {
+    position: absolute;
+    right: 150px;
+    top: 175px;
+    padding: 10px 20px 10px 20px;
+    background-color: blueviolet;
+    color: white;
+}
+
+#showScores {
+    font-size: 20px;
+}
+
+#topScore {
+    font-size: 15px;
+}
+
+#theLastButtons {
+    display: block;
+    margin-top: 50px;
+}
+
+

@@ -31,7 +31,7 @@ var Question = function () {
     opening.style.display = "none";
         
 setInterval(function() {
-        time--;
+        time==90;
         count.textContent = time + " seconds left";
     }, 1000);
 

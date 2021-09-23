@@ -98,18 +98,20 @@
         </div>
 
         <section class="Results">
-            <div>Question 6 was <span id="finalQuestion"></span></div>
-            <div>You completed the quiz!</div>
-            <div>Final Score : <span id= "score"></span></div>
-            <label for="initials">Enter your initials here:</label>
-            <input type="text" id="initials" name="initials"/>
+            <div id="lastanswer">Question 6 was <span id="finalQuestion"></span></div>
+            <div id= "congratulations">You completed the quiz!</div>
+            <div id="datScore">Final Score : <span id= "score"></span></div>
+            <div id="initialsHere">Enter your initials here:</label>
+            <textarea id="initials">Input initials here.</textarea>
             <button class="submit">Submit Your Score</button>
-            <div>
-                <h1>Highscores:</h1>
+            <div id="theseScores">
+                <h1 id = "showScores">Highscores:</h1>
                     <p id="topScore"></p>
             </div>
+        <div id="theLastButtons">
             <button class = "redo">Redo Quiz</button>
             <button class = "clear">Clear Highscores</button>
+        </div>
         </section>
     </main>
     <script src="thisshouldwork.js"></script>

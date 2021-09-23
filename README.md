@@ -95,6 +95,6 @@ The following showed up to the user: <br>
 <br>
 For some reason, the textbox would function; however, upon clicking the submit button provided to the users, nothing would log into the local storage or to the console. 
 
-
+The last issue I came across was the timer stopping and reseting when the user clicked the retake quiz button.  I was able to add time to it, but I was not able to get the timer to restart back at 90.
 
 
