@@ -32,8 +32,8 @@ var startButton = document.querySelector(".start");
 var lastPage = document.querySelector(".Results");
 var enterInitials = document.querySelector("#initials");
 var submitScore = document.querySelector(".submit");
-var retake = document.querySelector("redo");
-var clearScores = document.querySelector("clear");
+var retake = document.querySelector(".redo");
+var clearScores = document.querySelector(".clear");
 
 
 // Variables for HTML placeholders.
@@ -45,10 +45,10 @@ var amIRight4 = document.getElementById("WrongorRight4");
 var amIRight5 = document.getElementById("WrongorRight5");
 var lastQuestionResult = document.getElementById("finalQuestion");
 var clock = document.getElementById("countdown");
-var time = 90;
 var remainingTime = document.getElementById("score");
 var score1 = document.querySelector("#topScore");
 var lastScore = localStorage.getItem("Score");
+var time = 90;
 console.log(lastScore);
 
 // Hide all HTML but the header.
@@ -75,6 +75,21 @@ var beginTheQuiz = function (){
     runTheClock();
     firstPage.style.display = "none";
     question1.style.display = "block";
+};
+
+var beginTheQuizAgain = function (){
+    var diff = 90-time;
+    time+=diff;
+    runTheClock();
+    firstPage.style.display = "none";
+    question1.style.display = "block";
+    question2.style.display = "none";
+    question3.style.display = "none";
+    question4.style.display = "none";
+    question5.style.display = "none";
+    question6.style.display = "none";
+    lastPage.style.display = "none";
+    clock.style.display = "block";
 };
 
 // Displaying question 2 and showing right or wrong answer results.
@@ -206,9 +221,12 @@ var question6Wrong = function () {
     submitScore.addEventListener("click", logData);
 };
 
-// Function for entering in initials and adding the score with initials to the internal storage and leader board.
+// Function for reseting the high scores.
 
-
+var resetScores = function () {
+    localStorage.clear("finalScore");
+    localStorage.clear("enterInitials");
+}
 
 // Adding event listeners to the "wrong answer" buttons.
 
@@ -243,4 +261,5 @@ correctA6.addEventListener("click", question6Right);
 // Adding an event listener to the start button.
 
 startButton.addEventListener("click", beginTheQuiz);
-
+retake.addEventListener("click", beginTheQuizAgain);
+clearScores.addEventListener("click", resetScores);
