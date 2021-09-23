@@ -33,7 +33,11 @@ var lastPage = document.querySelector(".Results");
 
 // Variables for HTML placeholders.
 
-var amIRight = document.getElementById("RightorWrong");
+var amIRight1 = document.getElementById("WrongorRight1");
+var amIRight2 = document.getElementById("WrongorRight2");
+var amIRight3 = document.getElementById("WrongorRight3");
+var amIRight4 = document.getElementById("WrongorRight4");
+var amIRight5 = document.getElementById("WrongorRight5");
 var lastQuestionResult = document.getElementById("finalQuestion");
 var clock = document.getElementById("countdown");
 var time = 90;
@@ -59,13 +63,7 @@ function runTheClock() {setInterval(function() {
 
 // Adding a variable for functions to display if answer is right or wrong.
 
-var displayRightResult = setTimeout(function() {
-    amIRight.innerHTML = "Right!";
-}, 2000);
 
-var displayWrongResult = setTimeout(function() {
-    amIRight.innerHTML = "Wrong!";
-}, 2000);
 
 // Function for clicking start button.
 
@@ -80,14 +78,14 @@ var beginTheQuiz = function (){
 var question1Right = function () {
     question1.style.display = "none";
     question2.style.display = "block";
-    displayRightResult;
+    amIRight1.innerHTML = "Right!";
 };
 
 var question1Wrong = function () {
     question1.style.display = "none";
     question2.style.display = "block";
     time-=5;
-    displayWrongResult;
+    amIRight1.innerHTML = "Wrong!";
 };
 
 // Displaying question 3 and showing right or wrong answer results.
@@ -95,14 +93,14 @@ var question1Wrong = function () {
 var question2Right = function () {
     question2.style.display = "none";
     question3.style.display = "block";
-    displayRightResult;
+    amIRight2.innerHTML = "Right!";
 };
 
 var question2Wrong = function () {
     question2.style.display = "none";
     question3.style.display = "block";
-    time-=5;
-    displayWrongResult;
+    time-=10;
+    amIRight2.innerHTML = "Wrong!";
 };
 
 // Displaying question 4 and showing right or wrong answer results.
@@ -110,14 +108,14 @@ var question2Wrong = function () {
 var question3Right = function () {
     question3.style.display = "none";
     question4.style.display = "block";
-    displayRightResult;
+    amIRight3.innerHTML = "Right!";
 };
 
 var question3Wrong = function () {
     question3.style.display = "none";
     question4.style.display = "block";
-    time-=5;
-    displayWrongResult;
+    time-=10;
+    amIRight3.innerHTML = "Wrong!";
 };
 
 // Displaying question 5 and showing right or wrong answer results.
@@ -125,14 +123,14 @@ var question3Wrong = function () {
 var question4Right = function () {
     question4.style.display = "none";
     question5.style.display = "block";
-    displayRightResult;
+    amIRight4.innerHTML = "Right!";
 };
 
 var question4Wrong = function () {
     question4.style.display = "none";
     question5.style.display = "block";
-    time-=5;
-    displayWrongResult;
+    time-=10;
+    amIRight4.innerHTML = "Wrong!";
 };
 
 // Displaying question 6 and showing right or wrong answer results.
@@ -140,14 +138,14 @@ var question4Wrong = function () {
 var question5Right = function () {
     question5.style.display = "none";
     question6.style.display = "block";
-    displayRightResult;
+    amIRight5.innerHTML = "Right!";
 };
 
 var question5Wrong = function () {
     question5.style.display = "none";
     question6.style.display = "block";
-    time-=5;
-    displayWrongResult;
+    time-=10;
+    amIRight5.innerHTML = "Wrong!";
 };
 
 // Hiding the remaining questions and displaying the final page.
@@ -156,15 +154,18 @@ var question6Right = function () {
     question6.style.display = "none";
     lastPage.style.display = "block";
     lastQuestionResult.textContent = "Right!"
+    clock.style.display = "none";
+    var finalScore = time;
+    remainingTime.textContent = finalScore;
 };
 
 var question6Wrong = function () {
     question6.style.display = "none";
     lastPage.style.display = "block";
     lastQuestionResult.textContent = "Wrong!"
-    time-=5;
+    time-=10;
     clock.style.display = "none";
-    var finalScore=time;
+    var finalScore = time;
     remainingTime.textContent = finalScore;
 };
 
