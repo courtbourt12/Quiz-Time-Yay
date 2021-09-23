@@ -8,8 +8,8 @@ var four = document.querySelector("#four");
 var five = document.querySelector("#five");
 var six = document.querySelector("#six");
 var questions = [0,1,2,3,4,5];
-const buttonwrong = document.getElementsByClassName(".wrong");
-const buttonright = document.getElementsByClassName(".correct");
+const buttonwrong = document.querySelectorAll(".wrong");
+const buttonright = document.querySelectorAll(".correct");
 var right = document.querySelector("#yup");
 var wrong = document.querySelector("#nope");
 console.log(questions);
@@ -29,31 +29,30 @@ wrong.style.display = "none";
 
 var Question = function () {
     opening.style.display = "none";
-    
-    
+        
 setInterval(function() {
         time--;
         count.textContent = time + " seconds left";
     }, 1000);
 
-    var next = Math.floor(Math.random(questions)*questions.length);
-    if (next===questions[0]) {
+    var nextUp = Math.floor(Math.random()*questions.length);
+    if (nextUp===questions[0]) {
         one.style.display="block";
-    } else if (next===questions[1]) {
+    } else if (nextUp===questions[1]) {
         two.style.display="block";
-    } else if (next===questions[2]) {
+    } else if (nextUp===questions[2]) {
         three.style.display="block";
-    } else if (next===questions[3]) {
+    } else if (nextUp===questions[3]) {
         four.style.display="block";
-    } else if (next===questions[4]) {
+    } else if (nextUp===questions[4]) {
         five.style.display="block";
-    } else if (next===questions[5]) {
+    } else if (nextUp===questions[5]) {
         six.style.display = "block;"
     }
-    console.log(next);
-    questions.splice(next,1, "used");
+    console.log(nextUp);
+    questions.splice(nextUp,1, "used");
     console.log(questions);
-    }
+};
 
 
 
@@ -62,7 +61,7 @@ var nextQuestionWrong = function () {
     // for (var i=0; i<questions.length; i++) {
     //     var nextUp = Math.floor(Math.random(questions[i])*questions.length);
     // }
-    var nextUp = Math.floor(Math.random(questions[6])*questions.length);
+    var nextUp = Math.floor(Math.random()*questions.length);
     if (nextUp===questions[1]) {
         one.style.display="block";
         two.style.display = "none";
@@ -120,56 +119,58 @@ var nextQuestionWrong = function () {
 }
 
 var nextQuestionRight = function () {
+    
+    while(questions[nextUp]==="used") {
+        var nextUp = Math.floor(Math.random()*questions.length);
 
-    var nextUp = Math.floor(Math.random(questions[6])*questions.length);
-    if (nextUp===questions[1]) {
+    if (nextUp===questions[0]) {
         one.style.display="block";
         two.style.display = "none";
         three.style.display = "none";
         four.style.display = "none";
         five.style.display = "none";
         six.style.display = "none";
-    } else if (nextUp===questions[2]) {
+    } else if (nextUp===questions[1]) {
         one.style.display = "none";
         two.style.display="block";
         three.style.display = "none";
         four.style.display = "none";
         five.style.display = "none";
         six.style.display = "none";
-    } else if (nextUp===questions[3]) {
+    } else if (nextUp===questions[2]) {
         one.style.display = "none";
         two.style.display = "none";
         three.style.display="block";
         four.style.display = "none";
         five.style.display = "none";
         six.style.display = "none";
-    } else if (nextUp===questions[4]) {
+    } else if (nextUp===questions[3]) {
         one.style.display = "none";
         two.style.display = "none";
         three.style.display = "none";
         four.style.display="block";
         five.style.display = "none";
         six.style.display = "none";
-    } else if (nextUp===questions[5]) {
+    } else if (nextUp===questions[4]) {
         one.style.display = "none";
         two.style.display = "none";
         three.style.display = "none";
         four.style.display = "none";
         five.style.display="block";
         six.style.display = "none";
-    } else if (nextUp===questions[6]) {
+    } else if (nextUp===questions[5]) {
         one.style.display = "none";
         two.style.display = "none";
         three.style.display = "none";
         four.style.display = "none";
         five.style.display = "none";
         six.style.display = "block;"
-    } else{
-        for (var i=0; i<questions.length; i++) {
-            var nextUp = Math.floor(Math.random(questions[i])*questions.length);
-        }
     }
     console.log(nextUp);
+    //  else{
+    //         var nextUp = Math.floor(Math.random()*questions.length);
+    //     }
+    }
     questions.splice(nextUp, 1, "used");
     console.log(questions);
     console.log(nextUp); 
@@ -178,10 +179,12 @@ var nextQuestionRight = function () {
 }
 
 begin.addEventListener("click", Question);
-buttonwrong.forEach(function () {
-    addEventListener("click", nextQuestionWrong);
+
+buttonwrong.forEach(buttonwrong => {
+    buttonwrong.addEventListener("click", nextQuestionWrong);
 });
-buttonright.forEach(function () {
-    addEventListener("click", nextQuestionRight);
+
+buttonright.forEach(buttonright => {
+    buttonright.addEventListener("click", nextQuestionRight);
 });
 
