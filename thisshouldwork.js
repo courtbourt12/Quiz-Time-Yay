@@ -30,7 +30,7 @@ const wrongA6 = document.querySelectorAll(".wrong6");
 var firstPage = document.querySelector("header");
 var startButton = document.querySelector(".start");
 var lastPage = document.querySelector(".Results");
-var enterInitials = document.querySelector("#initials");
+var enterInitials = document.querySelector("#initials").value;
 var submitScore = document.querySelector(".submit");
 var retake = document.querySelector(".redo");
 var clearScores = document.querySelector(".clear");
@@ -180,7 +180,7 @@ var question6Right = function () {
     // Adding the data to local storage.
 
     var lastScore = localStorage.getItem("finalScore");
-    var lastInitial = JSON.parse(localStorage.getItem("enterInitials"));
+    var lastInitial = localStorage.getItem("enterInitials");
     
     var logData = function () {
         if (lastScore<finalScore) {
@@ -189,7 +189,7 @@ var question6Right = function () {
             score1.textContent="1. " + lastInitial + " - " + lastScore + "- You didn't beat it this time :(";
         };
         
-        localStorage.setItem("Initials", JSON.stringify(enterInitials));
+        localStorage.setItem("Initials",enterInitials);
     }
     localStorage.setItem("Score", finalScore);
     submitScore.addEventListener("click", logData);
@@ -207,7 +207,7 @@ var question6Wrong = function () {
     // Adding the data to local storage.
 
     var lastScore = localStorage.getItem("finalScore");
-    var lastInitial = JSON.parse(localStorage.getItem("enterInitials"));
+    var lastInitial = localStorage.getItem("enterInitials");
     
     var logData = function () {
         if (lastScore<finalScore) {
@@ -215,7 +215,7 @@ var question6Wrong = function () {
         } else {
             score1.textContent="1. " + lastInitial + " - " + lastScore + "- You didn't beat it this time :(";
         };
-        localStorage.setItem("Initials", JSON.stringify(enterInitials));
+        localStorage.setItem("Initials", enterInitials);
     }
     localStorage.setItem("Score", finalScore);
     submitScore.addEventListener("click", logData);
