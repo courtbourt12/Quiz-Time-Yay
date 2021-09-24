@@ -30,7 +30,7 @@ const wrongA6 = document.querySelectorAll(".wrong6");
 var firstPage = document.querySelector("header");
 var startButton = document.querySelector(".start");
 var lastPage = document.querySelector(".Results");
-var enterInitials = document.querySelector("#initials").value;
+var enterInitials = document.querySelector(".initials").value;
 var submitScore = document.querySelector(".submit");
 var retake = document.querySelector(".redo");
 var clearScores = document.querySelector(".clear");
@@ -49,7 +49,6 @@ var remainingTime = document.getElementById("score");
 var score1 = document.querySelector("#topScore");
 var lastScore = localStorage.getItem("Score");
 var time = 90;
-console.log(lastScore);
 
 // Hide all HTML but the header.
 
@@ -78,18 +77,7 @@ var beginTheQuiz = function (){
 };
 
 var beginTheQuizAgain = function (){
-    var diff = 90-time;
-    time+=diff;
-    runTheClock();
-    firstPage.style.display = "none";
-    question1.style.display = "block";
-    question2.style.display = "none";
-    question3.style.display = "none";
-    question4.style.display = "none";
-    question5.style.display = "none";
-    question6.style.display = "none";
-    lastPage.style.display = "none";
-    clock.style.display = "block";
+    location.reload();
 };
 
 // Displaying question 2 and showing right or wrong answer results.
@@ -189,7 +177,7 @@ var question6Right = function () {
             score1.textContent="1. " + lastInitial + " - " + lastScore + "- You didn't beat it this time :(";
         };
         
-        localStorage.setItem("Initials",enterInitials);
+        localStorage.setItem("Initials", enterInitials);
     }
     localStorage.setItem("Score", finalScore);
     submitScore.addEventListener("click", logData);
@@ -215,7 +203,7 @@ var question6Wrong = function () {
         } else {
             score1.textContent="1. " + lastInitial + " - " + lastScore + "- You didn't beat it this time :(";
         };
-        localStorage.setItem("Initials", enterInitials);
+        localStorage.setItem("Initials",enterInitials);
     }
     localStorage.setItem("Score", finalScore);
     submitScore.addEventListener("click", logData);
@@ -227,6 +215,8 @@ var resetScores = function () {
     localStorage.clear("finalScore");
     localStorage.clear("enterInitials");
 }
+
+
 
 // Adding event listeners to the "wrong answer" buttons.
 
