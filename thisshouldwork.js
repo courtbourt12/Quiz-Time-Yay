@@ -30,7 +30,7 @@ const wrongA6 = document.querySelectorAll(".wrong6");
 var firstPage = document.querySelector("header");
 var startButton = document.querySelector(".start");
 var lastPage = document.querySelector(".Results");
-var enterInitials = document.querySelector(".initials").value;
+var enterInitials = document.querySelector(".initials");
 var submitScore = document.querySelector(".submit");
 var retake = document.querySelector(".redo");
 var clearScores = document.querySelector(".clear");
@@ -77,7 +77,7 @@ var beginTheQuiz = function (){
 };
 
 var beginTheQuizAgain = function (){
-    location.reload();
+    location.reload;
 };
 
 // Displaying question 2 and showing right or wrong answer results.
@@ -168,16 +168,16 @@ var question6Right = function () {
     // Adding the data to local storage.
 
     var lastScore = localStorage.getItem("finalScore");
-    var lastInitial = localStorage.getItem("enterInitials");
+    var lastInitial = localStorage.getItem("Initials");
     
     var logData = function () {
         if (lastScore<finalScore) {
-            score1.textContent="1. " + enterInitials + " - " + finalScore + "- You beat it this time!";
+            score1.textContent="1. " + enterInitials.value + " - " + finalScore + "- You beat it this time!";
         } else {
             score1.textContent="1. " + lastInitial + " - " + lastScore + "- You didn't beat it this time :(";
         };
         
-        localStorage.setItem("Initials", enterInitials);
+        localStorage.setItem("Initials", enterInitials.value);
     }
     localStorage.setItem("Score", finalScore);
     submitScore.addEventListener("click", logData);
@@ -195,15 +195,15 @@ var question6Wrong = function () {
     // Adding the data to local storage.
 
     var lastScore = localStorage.getItem("finalScore");
-    var lastInitial = localStorage.getItem("enterInitials");
+    var lastInitial = localStorage.getItem("Initials");
     
     var logData = function () {
         if (lastScore<finalScore) {
-            score1.textContent="1. " + enterInitials + " - " + finalScore + "- You beat it this time!";
+            score1.textContent="1. " + enterInitials.value + " - " + finalScore + "- You beat it this time!";
         } else {
             score1.textContent="1. " + lastInitial + " - " + lastScore + "- You didn't beat it this time :(";
         };
-        localStorage.setItem("Initials",enterInitials);
+        localStorage.setItem("Initials", enterInitials.value);
     }
     localStorage.setItem("Score", finalScore);
     submitScore.addEventListener("click", logData);
